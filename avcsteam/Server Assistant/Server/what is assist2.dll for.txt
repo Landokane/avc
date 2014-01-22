@@ -1,0 +1,34 @@
+Assist2.DLL was created by Foxi
+
+It is a dll-erized version of RIPENT.EXE, which allows SA to import and export the entity data of a BSP automatically.
+
+To use, go to SAC and open the file manager. Find a BSP file and click the EDIT button. Only the ENT will be downloaded. Edit it, then click the finish button -- SAC will reupload it and reimport it into the BSP.
+
+
+the readme:
+
+generateEnts
+-- Description: Before retrieving data from a given BSP, call this function. It is NOT safe to use the same 'bank' data twice. Data must be reset, then regenerated with this function after EACH modification after write-back you do.
+
+-- Parameters: <path to BSP file to extract ents from> (as char *)
+-- Return Type: int
+-- Return Value: (number of banks total to be used in reportBank function)
+-- Errornous Conditions: Bank number of 0 indicates error condition. Abort call.
+
+
+reportBank
+-- Description: Extracts current 'page' of data specified by argument and returns that information by modifying supplied string (second argument). To be used after generateEnts.
+
+-- Parameters: int bank (bank number to retreive, starting at 1), char * bankdata (an output-only variable that will be cleared and reset to new bank data in the function... you still may want to clear it between calls to reportBank just for safety's sake)
+-- Return Type: (none; value is set in second parameter)
+-- Return Value: (char *, exact return value depends on current bank; see above)
+-- Errornous Conditions: Bank data parameter as NULL
+
+
+writeBank
+-- Description: Writes entity data back into the BSP. Slightly different than the way data is retrieved, there is no bank system per se. Instead the bank data is written from the supplied variable to the supplied bsp... a flag toggles wether or not data should be appended to the current entity set, begin at the beginning [aka purge], or set final and perform write.
+
+-- Parameters: char * (bank data to be written), char * bsppath (the file it concerns), int append (0 = erase current bank data [USE IN FIRST CALL, ESPECIALLY AFTER LAST FILE-WRITE], 1 = append this bank set to the last-called data, 2 = signifies that this is the last data block to be sent to this function -- append all data recieved and perform file write [aka save])
+--Return Type: BOOL
+-- Return Value: TRUE if operation successful
+-- Errornous Conditions: return value is FALSE if error occurred

@@ -1,0 +1,412 @@
+msgbox
+Sends a messagebox to the user that started this script. SA Clients only.
+msgbox("Hey, whats up?");
+
+numparams
+Returns the number of parameters passed to this script.
+n = numparams;
+
+broadcast
+Broadcasts text to the server.
+broadcast("Welcome!");
+
+message
+Sends a message to the server in blue-yellow fading text.
+message("Hey all!");
+
+messagefull
+Allows full control of the MESSAGE function   UN DONE DESCRIPTION
+
+message2
+Sends a message to the server in green fading text.
+message2("Hey all!");
+
+message3
+Sends a message to the server in red fading text.
+message3("Hey all!");
+
+param
+Returns one of the parameters passed to this function.
+name = param(1);\nid = param(2);
+
+return
+Sets the value that this function will return.
+return("abc");
+
+minutes
+Takes a value given in seconds and returns the number of minutes only.\nExample: minutes(130) would return 2, because 2 minutes is 120 seconds. See also SECONDS function.
+min = minutes(130);
+
+seconds
+Takes a value given in seconds and returns the number of seconds only, after minutes have been subtracted.\nExample: seconds(130) would return 10, because 130 seconds is 2 minutes and 10 seconds. See also MINUTES function.
+sec = seconds(130);
+
+addtimer
+Adds a timer function, used for marking time until an event can be called again.\nExample: addtimer("variable name", 50) would set (variable name) to 50, and every second the value would go down by one, until it reaches zero, regardless of whether or not a script is called.\n\nNote: (variable name) MUST be included in quotes.
+addtimer("var1", 20);
+
+rnd
+Returns a random number, from 0 to 1, with 3 decimal places.
+num = rnd;
+
+randomize
+Randomizes the seed, for use with RND.
+randomize;
+
+chr
+Returns a character containing the char code specified. \nExample: chr(65) would return "A" (capital A)
+var1 = chr(67);
+
+sqrt
+Returns the square root of the number given.
+var1 = sqrt(16);
+
+asc
+Returns the ASCII value of the character given, If more than one character is in the given string, the ASCII value of the first one is returned.\nExample: asc("A") returns 65.
+var1 = asc("V");
+
+dllmode
+Returns whether or not the assistant DLL is present.
+var1 = dllmode;
+
+lcase 
+Converts the given string to lower case.\nExample: lcase("Hey!") returns "hey!"
+var1 = lcase(var2);
+
+ucase 
+Converts the given string to upper case.\nExample: ucase("Hey!") returns "HEY!"
+var1 = ucase(var2);
+
+trim
+Removes any trailing and leading spaces from the given string.\n Example: trim("  Fred  ") returns "Fred"
+var1 = trim(var2);
+
+ltrim
+Removes any leading spaces from the given string.\n Example: ltrim("  Fred  ") returns "Fred  "
+var1 = trim(var2);
+
+rtrim
+Removes any trailing spaces from the given string.\n Example: trim("  Fred  ") returns "  Fred"
+var1 = trim(var2);
+
+val
+Converts the givin string to number form.\nExample 1: val("123") returns "123"\nExample 2: val("45Abc") returns "45"\nExample 3: val("abc") returns "0"\nExample 4: val("") returns "0"
+var1 = val(var2);
+
+int
+Rounds the given string down, and removes any non-numerals.\nExample: int("4.5") returns "4"
+var1 = int(var2);
+
+mid
+Returns a sub section of the given string. The first arguement is the string, the second is the start position, and the third is the length.\nExample: mid("ABCDEFGH", 3, 4) returns "CDEF".
+var1 = mid(var2, start, length);
+
+left
+Returns a specific number of characters from the left side of the string. The first arguement is the string, second is the length.\nExample: left("ABCDEFGH", 3) returns "ABC".
+var1 = left(var2, length);
+
+right
+Returns a specific number of characters from the right side of the string. The first arguement is the string, second is the length.\nExample: right("ABCDEFGH", 5) returns "DEFGH".
+var1 = right(var2, length);
+
+len
+Returns the length of the given string. \nExample: len("ABCDEF") returns 6.
+var1 = len(var2);
+
+instr
+Searches for the occurance of one string within another. The first arguement is the start position, the second is the string to be searched, and the third is the string to search for. If no match is found, 0 is returned.\nExample 1: instr(1, "ABCDEF", "C") returns "3"\nExample 2: instr(1, "ABCDEF", "DEF") returns "4".\nExample 3: instr(2, "ABCDEF", "A") returns "0".\nExample 1: instr(1, "ABCDEF", "H") returns "0".
+var1 = instr(start, var2, var3);
+
+instrrev 
+Searches for the occurance of one string within another, starting from the end of the string.. The first arguement is the start position, the second is the string to be searched, and the third is the string to search for. If no match is found, 0 is returned.\nExample 1: instrrev(-1, "ABCDEFABCDEF", "C") returns "9"\nExample 2: instrrev(9, "ABCDEFABCDEF", "C") returns "3"
+var1 = instrrev(start, var2, var3);
+
+replacestring
+Searches through a given string and replaces the occurance of one string with another. \nExample: replacestring("search string", "r", " ") returns "sea ch st ing"
+var1 = replacestring(var2, from, to);
+
+namematch
+Takes a partially incomplete name, and searches all the players currently on the server for a name match.\nReturns 0 if nothing matches.\nReturns a positive number, representing the players UserID if a match was found.\nReturns a negative number if more than one match was found, ie if 2 matches were made it returns -2.\n\nExample: There's a player named "Bill" with userID 1, and a player named "Buck" with userID 2. \nnamematch("B") will return -2, because 2 matches were made.\nnamematch("A") will return 0. \nnamematch("Bu") will return 2, Buck's userID.
+var1 = namematch(var2);
+
+makefile
+Creates a file with the given text. 1st parameter is path to file, 2nd is the text to put in the file. If the file exists it will be destroyed.
+makefile(path&"\file.txt", "Line 1" & nl & "Line 2");
+
+filesize
+Returns the size of the file specified in the path. If the file is not found, blank is returned.
+var1 = filesize(path&"\file.txt");
+
+getvarfromfile
+Opens a file specified, preferably one that follows standard Half-Life config file specs, and retrieves a variable.\n\nExample: If you had a file named "gravity.cfg" which contained a line, sv_gravity 200 , and you used getvarfromfile("gravity.cfg", "sv_gravity") the function would return 200.
+var1 = getvarfromfile(path&"\file.cfg", "hostname");
+
+makefilex
+Creates a file with the given text. 1st parameter is path to file, 2nd is the text to put in the file. If the file exists, the write is NOT performed.
+makefilex(path&"\file.txt", "Line 1" & nl & "Line 2");
+
+addtofile
+Opens the given file, and adds the given lines to the bottom of it. 1st parameter is path to file, 2nd is the text to put at the end the file. If the file does not exist, a new file is created.
+makefilex(path&"\file.txt", "Line 1" & nl & "Line 2");
+
+copyall
+Copies all of the files in the folder specified by arguement 1 into the folder specified by arguement 2.
+copyall(path, path & "\configs");
+
+delete
+Deletes the file specified by the parameter.
+delete(path & "server.cfg");
+
+mapcycle
+Sets the map cycle on the server. Any number of parameters can be supplied.\nExample: mapcycle("2fort", "rock2", "well")\nExample 2: mapcycle("2fort", "well", "hunted", "rock2", "casbah")
+mapcycle("2fort", "well", "hunted", "rock2", "casbah")
+
+mkdir
+Creates a directory as specified. Simply include the path to the directory, as follows: path & "\new dir"
+mkdir(path & "new dir");
+
+renamefile
+Renames the file specified in arguement 2 to the name specified in arguement 2.
+renamefile("server.cfg", "old.cfg");
+
+checkforfile
+Checks if the file specified exists, and if it does returns 1. If not, returns 0.
+var1 = checkforfile("server.cfg");
+
+removefromfile
+Opens the specified file, and removes any line that matches the one specified in arguement 2. Case insensitive. \nExample: removefromfile("server.cfg", "sv_gravity 800") will remove any and all lines that match sv_gravity 800.
+removefromfile("server.cfg", "sv_gravity 800");
+
+getfile
+Opens the specified file and returns the entire file as a variable.\nExample: var1 = getfile("server.cfg")  var1 now contains all the text in server.cfg.
+var1 = getfile("server.cfg") 
+
+getfileline
+Retrieves a single line from the specified file. Parameter 2 is the line to retrieve.
+var1 = getfileline("server.cfg", 23);
+
+rcon
+Sends an rcon command to the server.\nExample: rcon("say Welcome to the server");\nExample 2:rcon("sv_gravity 200");
+rcon("say Welcome to the server")
+
+combine
+Unwritten
+Unwritten
+
+sendtouser
+Sends text to the console of the user who activated this script. If activated by an event, this function does nothing.
+sendtouser("The difference is clear!");
+
+sendtousername
+Sends text to the console of a player on the server matching this name.
+sendtousername("Player", "You are a player.");
+
+sendtouserid
+Sends text to the console of a player on the server matching this user ID.
+sendtouserid(43, "You are number 43.");
+
+sendtoall
+Sends text to the console of every player on the server.
+sendtoall("Hello!");
+
+getuseridfromname
+Returns the UserID of a player matching the name specified. An exact match must be made.
+var1 = getuseridfromname("Player");
+
+getuseridfromip
+Returns the UserID of a player matching the IP specified. An exact match must be made.
+var1 = getuseridfromip("127.0.0.1");
+
+getuseridfromuid
+Returns the UserID of a player having the wonid / uniqueID specified. An exact match must be made.
+var1 = getuseridfromuid("2342352");
+
+getuserinfo
+Returns extended information about the user specified. 1st arguement is the user ID, second is the information to retrieve. Valid information types are:\n\n1 or "class" - The players class, an integer\n2 or "connect" - If the player is connected only, or playing.\n3 or "entryname" - The name they entered with.\n4 or "ip" - The IP\n5 or "name" - The current name\n6 or "port" - The port\n7 or "realname" - The realname (see RealPlayers)\n8 or "team" - The team\n9 or "uniqueid" - The uniqueID\n10 or "num" - Player number\n11 or "time" - Seconds playing\n12 or "x" - x co-ordinate\n13 or "y" - y co-ordinate\n14 or "z" - z co-ordinate\n15 or "shutup" - if they are currently devoiced\n16 or "numkickvotes" - number of kick votes they have started\n17 or "warn" - if they are warned for swearing\n18 or "points" - number of points they have
+
+getuser
+
+makedirlist
+Undone
+makedirlist("FileWriteName", "DirPath", WriteExtensions (1 = no));
+
+mapvote
+
+help
+
+about
+
+currmap
+
+timeleft
+
+talk
+
+say
+
+anntimeleft 
+
+setvote 
+
+changelevel
+
+nextmap 
+
+rcon_password 
+
+autovote
+
+kickvote
+
+stopkickvote
+
+stopmapvote
+
+stopchoosevote
+
+users2
+
+settimeleft
+
+whois
+
+annid
+
+annid2
+
+addreal
+
+addentry
+
+addclan
+
+banid
+
+maxmsg
+
+maxtime
+
+maxkickvotes
+
+maxkicks
+
+kickbantime
+
+votepercent
+
+addcommand
+
+getinfo
+
+startlogwatch
+
+stoplogwatch
+
+startlog
+
+stoplog
+
+lastmaps
+
+clearlastmaps
+
+choose
+
+unbanlast
+
+sortlogs
+
+debugmode
+
+changename
+
+changeclass
+
+message
+
+saybroad
+
+setvar
+
+dllenabled
+
+checkfordll
+
+debugprint
+
+resetmessage
+
+doplayerscan
+
+crash
+
+setreal
+
+lookupreal
+
+talkto 
+
+kill 
+
+telekill 
+
+teleport 
+
+teleportto 
+
+telelist 
+
+telelistto
+
+telesave 
+
+teleload
+
+teleadd 
+
+maparraysave
+
+maparrayload
+
+maparrayclear
+
+stopallscripts
+
+startallscripts
+
+logbufferlen
+
+logbufferclear
+
+debugvars
+
+devoice
+
+revoice
+
+setgrid
+
+sendicq
+
+addpoints
+
+rempoints
+
+setpoints
+
+annpoints
+
+point_double_kv_at
+
+point_double_mv_at
+
+point_kv_cost
+
+point_spamkick_cost
+
+point_kicked_cost
+
+point_played_min
+
+getsendinfo
+

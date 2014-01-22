@@ -1,0 +1,149 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: HPB_bot - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\DOCUME~1\ADMINI~1.ALE\LOCALS~1\Temp\RSP1BF.tmp" with contents
+[
+/nologo /G5 /MTd /W3 /Gm /GX /ZI /Od /I "..\dlls" /I "..\engine" /I "..\common" /I "..\pm_shared" /I "..\\" /D "_DEBUG" /D "WIN32" /D "_WINDOWS" /D "VALVE_DLL" /D "GRAPPLE" /D "AVC" /D "SZ_DLL" /D "CAMERA" /D "RECORD" /FR".\Debug/" /Fp".\Debug/assist.pch" /YX /Fo".\Debug/" /Fd".\Debug/" /FD /c 
+"M:\source\AVC DLL\dlls\avbfg.cpp"
+"M:\source\AVC DLL\dlls\avchess.cpp"
+"M:\source\AVC DLL\dlls\avclock.cpp"
+"M:\source\AVC DLL\dlls\avdamage.cpp"
+"M:\source\AVC DLL\dlls\avdance.cpp"
+"M:\source\AVC DLL\dlls\avdll.cpp"
+"M:\source\AVC DLL\dlls\avflare.cpp"
+"M:\source\AVC DLL\dlls\avfountain.cpp"
+"M:\source\AVC DLL\dlls\avfox.cpp"
+"M:\source\AVC DLL\dlls\avgrapple.cpp"
+"M:\source\AVC DLL\dlls\avleash.cpp"
+"M:\source\AVC DLL\dlls\avpaper.cpp"
+"M:\source\AVC DLL\dlls\avpara.cpp"
+"M:\source\AVC DLL\dlls\avrace.cpp"
+"M:\source\AVC DLL\dlls\avradio.cpp"
+"M:\source\AVC DLL\dlls\avrecord.cpp"
+"M:\source\AVC DLL\dlls\avremote.cpp"
+"M:\source\AVC DLL\dlls\avsign.cpp"
+"M:\source\AVC DLL\dlls\avslot.cpp"
+"M:\source\AVC DLL\dlls\avsnow.cpp"
+"M:\source\AVC DLL\dlls\avtractor.cpp"
+"M:\source\AVC DLL\dlls\avtripmine.cpp"
+"M:\source\AVC DLL\dlls\avwep.cpp"
+"M:\source\AVC DLL\dlls\avwritewep.cpp"
+"M:\source\AVC DLL\dlls\bd.cpp"
+"M:\source\AVC DLL\dlls\buildcam.cpp"
+"M:\source\AVC DLL\dlls\cbeam.cpp"
+"M:\source\AVC DLL\dlls\custmotd.cpp"
+"M:\source\AVC DLL\dlls\dll.cpp"
+"M:\source\AVC DLL\dlls\drivecheck.cpp"
+"M:\source\AVC DLL\dlls\engine.cpp"
+"M:\source\AVC DLL\dlls\h_export.cpp"
+"M:\source\AVC DLL\dlls\linkfunc.cpp"
+"M:\source\AVC DLL\dlls\phatmat.cpp"
+"M:\source\AVC DLL\dlls\sadll.cpp"
+"M:\source\AVC DLL\dlls\smoke.cpp"
+"M:\source\AVC DLL\dlls\util.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\ADMINI~1.ALE\LOCALS~1\Temp\RSP1BF.tmp" 
+Creating temporary file "C:\DOCUME~1\ADMINI~1.ALE\LOCALS~1\Temp\RSP1C0.tmp" with contents
+[
+user32.lib advapi32.lib /nologo /subsystem:windows /dll /incremental:yes /pdb:".\Debug/assist.pdb" /debug /machine:I386 /def:".\assist.def" /out:".\Debug/assist.dll" /implib:".\Debug/assist.lib" 
+".\Debug\avbfg.obj"
+".\Debug\avchess.obj"
+".\Debug\avclock.obj"
+".\Debug\avdamage.obj"
+".\Debug\avdance.obj"
+".\Debug\avdll.obj"
+".\Debug\avflare.obj"
+".\Debug\avfountain.obj"
+".\Debug\avfox.obj"
+".\Debug\avgrapple.obj"
+".\Debug\avleash.obj"
+".\Debug\avpaper.obj"
+".\Debug\avpara.obj"
+".\Debug\avrace.obj"
+".\Debug\avradio.obj"
+".\Debug\avrecord.obj"
+".\Debug\avremote.obj"
+".\Debug\avsign.obj"
+".\Debug\avslot.obj"
+".\Debug\avsnow.obj"
+".\Debug\avtractor.obj"
+".\Debug\avtripmine.obj"
+".\Debug\avwep.obj"
+".\Debug\avwritewep.obj"
+".\Debug\bd.obj"
+".\Debug\buildcam.obj"
+".\Debug\cbeam.obj"
+".\Debug\custmotd.obj"
+".\Debug\dll.obj"
+".\Debug\drivecheck.obj"
+".\Debug\engine.obj"
+".\Debug\h_export.obj"
+".\Debug\linkfunc.obj"
+".\Debug\phatmat.obj"
+".\Debug\sadll.obj"
+".\Debug\smoke.obj"
+".\Debug\util.obj"
+]
+Creating command line "link.exe @C:\DOCUME~1\ADMINI~1.ALE\LOCALS~1\Temp\RSP1C0.tmp"
+Creating temporary file "C:\DOCUME~1\ADMINI~1.ALE\LOCALS~1\Temp\RSP1C1.bat" with contents
+[
+@echo off
+copy .\Debug\assist.dll m:\halfli~1\tfc\dlls
+]
+Creating command line "C:\DOCUME~1\ADMINI~1.ALE\LOCALS~1\Temp\RSP1C1.bat"
+Compiling...
+avbfg.cpp
+avchess.cpp
+avclock.cpp
+avdamage.cpp
+avdance.cpp
+avdll.cpp
+avflare.cpp
+avfountain.cpp
+avfox.cpp
+avgrapple.cpp
+avleash.cpp
+avpaper.cpp
+avpara.cpp
+avrace.cpp
+avradio.cpp
+avrecord.cpp
+avremote.cpp
+avsign.cpp
+avslot.cpp
+avsnow.cpp
+avtractor.cpp
+avtripmine.cpp
+avwep.cpp
+avwritewep.cpp
+bd.cpp
+buildcam.cpp
+cbeam.cpp
+custmotd.cpp
+dll.cpp
+drivecheck.cpp
+engine.cpp
+h_export.cpp
+linkfunc.cpp
+phatmat.cpp
+sadll.cpp
+smoke.cpp
+util.cpp
+Linking...
+   Creating library .\Debug/assist.lib and object .\Debug/assist.exp
+<h3>Output Window</h3>
+jaja
+        1 file(s) copied.
+
+
+
+<h3>Results</h3>
+assist.dll - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

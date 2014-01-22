@@ -1,0 +1,186 @@
+--- message
+Sends a message to the server in blue-yellow fading text. Use the symbol "\n" to indicate a new line.
+message Hey guys. Whats up?\nThis is on the second line!
+
+--- message2
+Like MESSAGE above, but in green fading text.
+message2 Hey guys. Whats up?\nThis is on the second line!
+
+--- message3
+Like MESSAGE above, but in red fading text.
+message3 Hey guys. Whats up?\nThis is on the second line!
+
+--- mapvote
+Starts a mapvote on the server. The duration is 2 minutes.
+
+--- help
+Lists available scripts. Undone
+
+--- about
+Displays credits
+
+--- currmap
+Displays the current map.
+
+--- timeleft
+Displays to you only, the time left on the map.
+
+--- talk
+Use as RCON command. Speaks to server in the standard fashion:
+<ADMIN adminname> Hey guys
+
+Usage:
+talk Hey Guys!
+
+--- anntimeleft 
+Announce the time left on the map to the server.
+
+--- setvote 
+Sets or displays the NEXT map (ie the one that was voted for)
+
+Usage:
+setvote         -displays next map
+setvote well    -sets next map to WELL
+
+--- changelevel <map>
+Changes the current map.
+
+--- nextmap 
+Switches immediatly to the next map specified in SETVOTE.
+
+--- stopkickvote
+Stops a kickvote currently in progress.
+
+--- stopmapvote
+Stops a map vote currently in progress.
+
+--- stopchoosevote
+Stops a general vote currently in progress. (see CHOOSE command)
+
+--- users2
+Lists users, in same fashion as USERS command, but with an extra column indicating the real name.
+
+--- settimeleft
+UNDONE - Sets the time left on the map.
+
+--- whois <name>
+Tells you who <name> really is. <name> can be a partial match from the beginning of the name.
+
+--- annid <name>
+Announces the ID of this player to the whole server.
+
+--- addreal <partial name>
+Adds this player as a realplayer.
+
+--- addentry <partial name>
+Adds a realplayer for this person, but using the name they entered the game with.
+
+--- addclan
+Adds this person to any clans found in his name.
+
+--- lastmaps
+Shows the last 3 maps that have been played. If the "Can't vote for last 3 maps" option is enabled, these are the maps people will not be able to vote for in a mapvote.
+
+--- clearlastmaps
+Clears the list of the last maps. See command "lastmaps".
+
+--- choose
+Starts a general vote on a topic you choose. 
+
+Usage:
+choose <time for vote in seconds> <number of options up to 9> <option 1> <option 2> <option 3> ... <option n> <question>
+
+Sample:
+choose 30 4 French English Spanish German Which language is your favourite?
+
+This would start a 30 second vote, with 4 language options, and the question.
+
+Notes:
+-To put a SPACE in one of the options, use the character \s. Example: The\sworld  would generate: The world
+-To put a QUOTE (") in one of the options or the question, use the character \q. Example: The\qworld\q  would generate: The "world"
+
+
+--- unbanlast
+Unbans the LAST person in the banlist. Use this when someone was accidently banned (such as you accidently clicked BAN button)
+
+--- sortlogs
+Sort the logs into their respective folders by day. If enabled, this happens automatically every 5 hours.
+
+--- changename
+Changes a player's name.
+
+Usage:
+changename <user id> <new name>
+
+Sample:
+changename 5 My Name Is Cool.
+
+--- changeclass
+Changes a player's class.
+
+Usage:
+changeclass <user id> <class number>
+
+Class numbers are as follows:
+
+1 - scout
+2 - sniper
+3 - soldier
+4 - demoman
+5 - medic
+6 - hwguy
+7 - pyro
+8 - spy
+9 - engineer
+11 - civilian
+
+--- saybroad
+Undone.
+
+--- setvar
+Set's a CVAR on the server. This has the unique usage of being able to set a variable with spaces. Useful for changing things like the server hostname.
+
+Sample:
+
+setvar hostname [CLAN]MY SERVER! PLAY NOW!
+
+--- crash
+This command tells Server Assistant to re-gather all information from the server. Use this after the server has crashed. If server assistant detects a crash, it will automatically issue this command.
+
+--- setreal
+Sets a player's name to their stored Real Name or Entry Name.
+
+Example:
+setreal Fred
+
+Fred will now be changed to his real name, which may be Joe.
+
+--- lookupreal
+Look up a player in the realplayers database.
+
+Usage:
+lookupreal <partial name match>
+
+--- talkto 
+Send a private message to someone.
+
+Usage:
+talkto <user id> <message>
+
+--- kill 
+Kill a player.
+
+Usage:
+kill <user id>
+
+--- devoice
+Devoice (gag) a player.
+
+--- revoice
+Revoice (un-gag) a player.
+
+--- sendicq
+Send an ICQ to an admin.
+
+Usage:
+sendicq <admin name> <message>
